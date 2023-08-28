@@ -36,6 +36,10 @@ function App() {
     dispatch(addMemorytoTotal(e.target.value))
   }
 
+  const handleResetMemory = (e)=>{
+    dispatch(resetMemory(e.target.value))
+  }
+
   return (
     <div className="App">
       <nav className="navbar navbar-dark bg-dark">
@@ -55,7 +59,7 @@ function App() {
             <div className="row">
               <CalcButton value={"M+"} onClick={handleAddMemory} />
               <CalcButton value={"MR"} onClick={handleTotalMemory}/>
-              <CalcButton value={"MC"} />
+              <CalcButton value={"MC"} onClick={handleResetMemory}/>
             </div>
 
             <div className="row">
