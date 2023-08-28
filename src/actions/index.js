@@ -3,6 +3,7 @@ export const CLEAR_DISPLAY = "CLEAR_DISPLAY"
 export const APPLY_NUMBER = "APPLY_NUMBER";
 export const CHANGE_OPERATION = "CHANGE_OPERATION";
 export const ADD_MEMORY = "ADD_MEMORY";
+export const CHANGE_MEMORY = "CHANGE_MEMORY";
 
 export const addOne = () => {
   return ({ type: ADD_ONE });
@@ -24,4 +25,8 @@ export const clearDisplay = (total) =>{
 
 export const addMemory = (memory)=>{
   return ({type:ADD_MEMORY,payload:memory})
+}
+
+export const addMemorytoTotal = (total) =>{
+  return({type:CHANGE_MEMORY , payload:total})
 }

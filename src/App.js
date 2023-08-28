@@ -6,7 +6,7 @@ import reducer, { initialState } from "./reducers";
 import {
   applyNumber,
   changeOperation,
-  memory,
+  addMemorytoTotal,
   resetMemory,
   addMemory,
   clearDisplay,
@@ -32,6 +32,10 @@ function App() {
     dispatch(addMemory(e.target.value))
   }
 
+  const handleTotalMemory = (e)=>{
+    dispatch(addMemorytoTotal(e.target.value))
+  }
+
   return (
     <div className="App">
       <nav className="navbar navbar-dark bg-dark">
@@ -50,7 +54,7 @@ function App() {
 
             <div className="row">
               <CalcButton value={"M+"} onClick={handleAddMemory} />
-              <CalcButton value={"MR"} />
+              <CalcButton value={"MR"} onClick={handleTotalMemory}/>
               <CalcButton value={"MC"} />
             </div>
 
