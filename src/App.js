@@ -1,16 +1,9 @@
 import React from 'react';
+
 import TotalDisplay from './components/TotalDisplay';
 import CalcButton from './components/CalcButton';
-import { useReducer } from 'react';
-import reducer from './reducers';
-import { initialState } from './reducers';
-import { applyNumber } from './actions';
-
 
 function App() {
-  const [hesap, calculateResult] = useReducer(reducer, initialState);
-
-
   return (
     <div className="App">
       <nav className="navbar navbar-dark bg-dark">
@@ -21,10 +14,10 @@ function App() {
         <div className="col-md-12 d-flex justify-content-center">
           <form name="Cal">
 
-            <TotalDisplay value={hesap.total} />
+            <TotalDisplay value={0} />
             <div className="row details">
-              <span id="operation"><b>Operation:</b>{hesap.operation}</span>
-              <span id="memory"><b>Memory:</b> {hesap.memory}</span>
+              <span id="operation"><b>Operation:</b> X</span>
+              <span id="memory"><b>Memory:</b> 0</span>
             </div>
 
             <div className="row">
@@ -34,7 +27,7 @@ function App() {
             </div>
 
             <div className="row">
-              <CalcButton value={1} applyNumber={applyNumber} />
+              <CalcButton value={1} />
               <CalcButton value={2} />
               <CalcButton value={3} />
             </div>
